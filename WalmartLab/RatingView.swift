@@ -16,14 +16,10 @@ class RatingView: UIView {
         didSet {
             if rating > 5 {
                 rating = Double(Int(rating) % 5) //fall back for safty
-                print("Invalid rating found >5")
             }
             if rating < 0 {
                 rating = 0
-                print("Invalid rating found <0")
-
             }
-            print(imageViews)
             let fullCount = Int(rating)
             var hasHalf = false
             let diff = rating - Double(fullCount)

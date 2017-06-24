@@ -92,11 +92,6 @@ class ProductsContainer: ProductProvider {
     
     func shouldPrefetch(at index: Int) -> Bool {
         let managerAvailable = !networkManager.isFetchingData()
-        if !managerAvailable {
-            print("manager not available")
-        } else {
-            print("pageNumber: \(paginator.pageNumber), at row: \(index)")
-        }
         return managerAvailable && index + 3 > products.count
     }
 }
